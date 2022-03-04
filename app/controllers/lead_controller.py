@@ -50,7 +50,7 @@ def update_lead():
             if(key != "email"):
                 return jsonify({"msg": "request must be passsed only email"}), 400
             if(type(value) != str):
-                return jsonify({"msg": " field must be string"}), 400
+                return jsonify({"msg": "field must be string"}), 400
 
         lead = LeadModel.query.filter_by(email = data["email"]).one()
 
