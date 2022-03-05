@@ -18,7 +18,8 @@ A API tem um total de 4 endpoints, aplicação capaz de realizar um CRUD complet
 Lead: São pessoas que podem estar interessadas em algum tipo de
 produto ou serviço. Esses possíveis futuros clientes podem ser coletados através de preenchimento de formulários ou cliques em
 páginas da internet, os dados geralmente são utilizados em campanhas publicitárias.<br/>
-O JSON para utilizar no Insomnia é este aqui -> https://git.heroku.com/leads-maria.git
+O JSON para utilizar no Insomnia é este aqui ->
+[Arquivo](Insomnia_2022-03-05.json)
 
 Para importar o JSON no Insomnia é só clicar na palavra "Insomnia" no canto superior esquerdo. Nesse dropdown é só clicar em "Import / Export > Import Data > From Url" e colocar o link acima :v:
 
@@ -168,9 +169,20 @@ Deve ser uma string:
 }
 ```
 
+Caso o e-mail não seja encontrado:
+
+`PATCH /leads - `
+` FORMATO DA RESPOSTA - STATUS 400`
+
+```json
+{
+  "msg": "No data found"
+}
+```
+
 Caso dê tudo certo, a resposta será assim:
 
-`DELETE /register - FORMATO DA RESPOSTA - STATUS 204`
+`PATCH /leads - FORMATO DA RESPOSTA - STATUS 204`
 
 ```json
 No body returned for response
@@ -210,9 +222,20 @@ Deve ser uma string:
 }
 ```
 
+Caso o e-mail não seja encontrado:
+
+`DELETE /leads -`
+` FORMATO DA RESPOSTA - STATUS 400`
+
+```json
+{
+  "msg": "No data found"
+}
+```
+
 Caso dê tudo certo, a resposta será assim:
 
-`DELETE /register - FORMATO DA RESPOSTA - STATUS 204`
+`DELETE /leads - FORMATO DA RESPOSTA - STATUS 204`
 
 ```json
 No body returned for response
